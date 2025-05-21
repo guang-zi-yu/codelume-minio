@@ -6,7 +6,7 @@ After=network.target
 User=root
 EnvironmentFile=/etc/default/codelume-minio/codelume-minio.env
 WorkingDirectory=/root/codelume/codelume-minio
-ExecStart= /root/codelume/codelume-minio/bin/minio server data --certs-dir certs --console-address ":9001"
+ExecStart= /root/codelume/codelume-minio/bin/minio server data
 Restart=always
 RestartSec=5s
 
