@@ -15,8 +15,12 @@ fi
 
 chmod +x ./bin/minio
 echo "Executable permission successfully added to ./bin/minio"
-
+mkdir /etc/default/codelume-minio/
 cp ./service/codelume-minio.service /etc/systemd/system/codelume-minio.service
+cp ./codelume-minio.env /etc/default/codelume-minio/codelume-minio.env
+cp /etc/letsencrypt/live/codelume.cn/fullchain.pem ./certs/public.crt
+cp /etc/letsencrypt/live/codelume.cn/privkey.pem ./certs/private.key
+chmod 600 /etc/default/codelume-minio/codelume-minio.env
 systemctl enable codelume-minio.service
 systemctl start codelume-minio.service
 echo "codelume-minio service started successfully."

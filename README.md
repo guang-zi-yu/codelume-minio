@@ -11,7 +11,15 @@ sudo ./install.sh
 
 ## 配置
 
-根据实际情况修改 service/codelume-minio.service 文件，请勿将密码等重要信息上传。
+根据实际情况修改 codelume-minio.env 文件，请勿将密码等重要信息上传。
+
+```bash
+# 安装 Certbot 工具
+sudo apt update
+sudo apt install certbot
+
+
+```
 
 ## 卸载
 

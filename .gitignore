@@ -1,2 +1,4 @@
 bin/minio
 data/.minio.sys
+private.key
+public.crt

@@ -4,10 +4,9 @@ After=network.target
 
 [Service]
 User=root
-Environment="MINIO_ROOT_USER=minioadmin"
-Environment="MINIO_ROOT_PASSWORD=minioadmin"
-WorkingDirectory=/codelume/codelume-minio
-ExecStart= /codelume/codelume-minio/bin/minio server data --certs-dir codelume/codelume-minio/certs --console-address ":9001"
+EnvironmentFile=/etc/default/codelume-minio/codelume-minio.env
+WorkingDirectory=/root/codelume/codelume-minio
+ExecStart= /root/codelume/codelume-minio/bin/minio server data --certs-dir certs --console-address ":9001"
 Restart=always
 RestartSec=5s
 
