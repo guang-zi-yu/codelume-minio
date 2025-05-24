@@ -1,0 +1,5 @@
+bin/minio
+data/*
+private.key
+public.crt
+codelume-minio.env

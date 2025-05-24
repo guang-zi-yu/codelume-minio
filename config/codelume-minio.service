@@ -1,0 +1,14 @@
+[Unit]
+Description=codelume-minio
+After=network.target
+
+[Service]
+User=root
+EnvironmentFile=/etc/default/codelume-minio/codelume-minio.env
+WorkingDirectory=/data/codelume/codelume-minio
+ExecStart= /data/codelume/codelume-minio/bin/minio server data --console-address :9001
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
